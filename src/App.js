@@ -50,6 +50,7 @@ const tempWatchedData = [
 const average = (arr) =>
   arr.reduce((acc, cur, i, arr) => acc + cur / arr.length, 0);
 
+// Main App Component
 export default function App() {
   const [movies, setMovies] = useState(tempMovieData);
   const [watched, setWatched] = useState(tempWatchedData);
@@ -73,6 +74,7 @@ export default function App() {
   );
 }
 
+// Navigation Bar
 const NavBar = ({ children }) => {
   return (
     <nav className='nav-bar'>
@@ -82,6 +84,7 @@ const NavBar = ({ children }) => {
   );
 };
 
+// Logo
 const Logo = () => {
   return (
     <div className='logo'>
@@ -91,6 +94,7 @@ const Logo = () => {
   );
 };
 
+// Number of Results
 const NumResults = ({ movies }) => {
   return (
     <p className='num-results'>
@@ -99,6 +103,7 @@ const NumResults = ({ movies }) => {
   );
 };
 
+// Search Input
 const Search = () => {
   const [query, setQuery] = useState('');
   return (
@@ -113,10 +118,12 @@ const Search = () => {
   );
 };
 
+// Main Content
 const Main = ({ children }) => {
   return <main className='main'>{children}</main>;
 };
 
+// Collapsible Box
 const Box = ({ children }) => {
   const [isOpen, setIsOpen] = useState(true);
 
@@ -130,6 +137,7 @@ const Box = ({ children }) => {
   );
 };
 
+// Movie List
 const MovieList = ({ movies }) => {
   return (
     <ul className='list'>
@@ -140,6 +148,7 @@ const MovieList = ({ movies }) => {
   );
 };
 
+// Movie Item
 const Movie = ({ movie }) => {
   return (
     <li>
@@ -155,6 +164,7 @@ const Movie = ({ movie }) => {
   );
 };
 
+// Watched Summary
 const WatchedSummary = ({ watched }) => {
   const avgImdbRating = average(watched.map((movie) => movie.imdbRating));
   const avgUserRating = average(watched.map((movie) => movie.userRating));
@@ -185,6 +195,7 @@ const WatchedSummary = ({ watched }) => {
   );
 };
 
+// Watched List
 const WatchedList = ({ watched }) => {
   return (
     <ul className='list'>
@@ -195,6 +206,7 @@ const WatchedList = ({ watched }) => {
   );
 };
 
+// Watched Item
 const WatchedMovie = ({ movie }) => {
   return (
     <li>
